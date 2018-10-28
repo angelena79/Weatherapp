@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.angelena.weatherapp.data.Item;
 import com.angelena.weatherapp.service.WeatherServiceCallback;
 import com.angelena.weatherapp.service.YahooWeatherService;
 
@@ -38,27 +39,33 @@ public class MainActivity extends AppCompatActivity implements WeatherServiceCal
         dialog.setMessage("Loading...");
         dialog.show();
 
-        service.refreshWeather("Austin, TX");
+        service.refreshWeather("Atlanta, GA");
     }
 
     @Override
-    public void serviceSuccess(Channel channel) {
+    public void serviceSuccess(com.angelena.weatherapp.data.Channel channel) {
         dialog.hide();
 
-        int resourceId = getResources().getIdentifier("drawable/icon" +channel.getItem().getConditon().getCode(), null, getPackageName());
+        Item item = channel.getItem();
+
+        int resourceId = getResources().getIdentifier("@drawable/icon" +item.getCondition().getCode(), null, getPackageName());
 
         @SuppressWarnings("depreciation")
         Drawable weatherIconDrawable = getResources().getDrawable(resourceId);
 
         weatherIconImageView.setImageDrawable(weatherIconDrawable);
 
+        temperatureTextView.setText(item.getCondition().getTemperature()+" "+channel.getUnits().getTemperature());
+
+        conditionTextView.setText(item.getCondition().getDescription());
+
         locationTextView.setText(service.getLocation());
     }
 
     @Override
-    public void serviFailure(Exception exception) {
+    public void serviceFailure(Exception exception) {
         dialog.hide();
-        Toast.makeText(this, exception.getMessage(), Toast.LENGTH_LONG.show);
+        Toast.makeText(this, exception.getMessage(), Toast.LENGTH_LONG).show();
 
     }
 }

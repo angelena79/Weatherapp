@@ -5,7 +5,7 @@ import org.json.JSONObject;
 public class Item implements JSONPopulator {
     private Condition condition;
 
-    public Condition getCondition() {
+    public Condition  getCondition() {
         return condition;
     }
 
@@ -14,4 +14,5 @@ public class Item implements JSONPopulator {
         condition = new Condition();
         condition.populate(data.optJSONObject("condition"));
     }
+
 }

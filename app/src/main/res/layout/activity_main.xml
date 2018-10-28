@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,47 +11,47 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontally="true"
-        android:src="@drawable/na"
-        tools:layout_editor_absoluteX="105dp"
-        tools:layout_editor_absoluteY="0dp" />
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/na" />
 
     <TextView
         android:id="@+id/temperatureTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="127dp"
         android:text="@string/temperature"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:typeface="serif"
-        tools:layout_editor_absoluteX="119dp"
-        tools:layout_editor_absoluteY="133dp" />
+        android:typeface="serif" />
 
     <TextView
         android:id="@+id/conditionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/condition"
-        tools:layout_editor_absoluteX="163dp"
-        tools:layout_editor_absoluteY="173dp" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="163dp"
+        android:text="@string/condition" />
 
     <TextView
         android:id="@+id/locationTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="191dp"
         android:text="@string/location"
         android:textSize="18sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="157dp"
-        tools:layout_editor_absoluteY="199dp" />
+        android:textStyle="bold" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontally="true"
-        android:src="@drawable/yahoo_logo"
-        tools:layout_editor_absoluteX="125dp"
-        tools:layout_editor_absoluteY="466dp" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="11dp"
+        android:src="@drawable/yahoo_logo" />
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>
